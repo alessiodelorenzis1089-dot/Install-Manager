@@ -1,20 +1,24 @@
-self.addEventListener("install", e => {
-  e.waitUntil(
-    caches.open("install-manager").then(cache => {
+const CACHE_NAME = "install-manager-v1";
+
+self.addEventListener("install", event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache => {
       return cache.addAll([
-        "index.html",
-        "style.css",
-        "script.js",
-        "icon.png"
+        "./",
+        "./index.html",
+        "./style.css",
+        "./script.js",
+        "./icon-192.png",
+        "./icon-512.png"
       ]);
     })
   );
 });
 
-self.addEventListener("fetch", e => {
-  e.respondWith(
-    caches.match(e.request).then(response => {
-      return response || fetch(e.request);
+self.addEventListener("fetch", event => {
+  event.respondWith(
+    caches.match(event.request).then(response => {
+      return response || fetch(event.request);
     })
   );
 });
