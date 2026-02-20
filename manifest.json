@@ -1,4 +1,5 @@
 {
+  "id": "/",
   "name": "Install Manager",
   "short_name": "InstallManager",
   "description": "Gestione professionale cantieri, clienti e materiali.",
