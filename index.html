@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Install Manager</title>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Install Manager</title>
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1f2937">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- SPLASH PRO MAX -->
+<div id="splashScreen">
+  <div class="glassSplash">
+    <img src="icon-512.png" class="splashLogo" alt="Logo">
+    <h1 class="splashTitle">Install Manager</h1>
+    <div class="loaderBar">
+      <div class="loaderProgress"></div>
+    </div>
+  </div>
+</div>
+
+<!-- HOME PAGE -->
+<div id="home">
+
+<header>
+  <h1>Install Manager</h1>
+</header>
+
+<section class="dashboard">
+  <div class="dashCard orange">
+    <span>In corso</span>
+    <h2 id="incorso">0</h2>
+  </div>
+  <div class="dashCard red">
+    <span>Problemi</span>
+    <h2 id="problema">0</h2>
+  </div>
+  <div class="dashCard green">
+    <span>Completati</span>
+    <h2 id="chiusi">0</h2>
+  </div>
+</section>
+
+<div class="searchBox">
+  <input type="text" id="searchInput" placeholder="Cerca cantiere...">
+</div>
+<div class="backupBar">
+  <button onclick="esportaDati()">Backup</button>
+  <button onclick="importaDati()">Ripristina</button>
+  <input type="file" id="fileInput" hidden>
+</div>
+<section class="lista" id="lista"></section>
+
+<button class="fab" onclick="openNew()">+</button>
+
+</div>
+
+<!-- PAGINA NUOVO/MODIFICA -->
+<div id="newPage" class="hidden">
+
+<header class="subHeader">
+  <button onclick="goHome()">←</button>
+  <h1 id="formTitle">Nuovo Cantiere</h1>
+</header>
+
+<div class="formWrap">
+
+<input type="text" id="nome" placeholder="Nome cliente">
+<input type="text" id="indirizzo" placeholder="Indirizzo">
+<input type="tel" id="telefono" placeholder="Telefono">
+
+<select id="stato">
+  <option value="incorso">In corso</option>
+  <option value="problema">Problema</option>
+  <option value="chiuso">Completato</option>
+</select>
+
+<textarea id="note" placeholder="Note o materiali mancanti"></textarea>
+
+<button class="saveBtn" onclick="save()">Salva</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

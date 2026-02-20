@@ -1,0 +1,284 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto;
+}
+
+body{
+background:#f4f7fb;
+color:#1f2937;
+}
+
+/* SPLASH PRO MAX */
+
+#splashScreen{
+position:fixed;
+width:100%;
+height:100%;
+background:linear-gradient(135deg,#0f172a,#1e40af,#2563eb);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+overflow:hidden;
+}
+
+.glassSplash{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(20px);
+padding:40px 35px;
+border-radius:24px;
+text-align:center;
+box-shadow:0 20px 60px rgba(0,0,0,0.4);
+animation:fadeInSplash 1s ease;
+}
+
+.splashLogo{
+width:110px;
+height:110px;
+object-fit:contain;
+margin-bottom:20px;
+animation:logoFloat 3s ease-in-out infinite;
+}
+
+.splashTitle{
+color:white;
+font-size:28px;
+font-weight:700;
+letter-spacing:1px;
+text-shadow:
+0 3px 6px rgba(0,0,0,0.4),
+0 6px 15px rgba(0,0,0,0.3);
+margin-bottom:25px;
+}
+
+.loaderBar{
+width:200px;
+height:6px;
+background:rgba(255,255,255,0.2);
+border-radius:10px;
+overflow:hidden;
+margin:auto;
+}
+
+.loaderProgress{
+width:0%;
+height:100%;
+background:white;
+animation:loading 2s ease forwards;
+}
+
+/* Animazioni */
+
+@keyframes fadeInSplash{
+from{opacity:0; transform:scale(0.95);}
+to{opacity:1; transform:scale(1);}
+}
+
+@keyframes logoFloat{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-8px);}
+100%{transform:translateY(0px);}
+}
+
+@keyframes loading{
+from{width:0%;}
+to{width:100%;}
+}
+
+/* HEADER */
+header{
+padding:25px 20px 10px;
+font-size:22px;
+font-weight:600;
+}
+
+/* DASHBOARD */
+.dashboard{
+display:flex;
+gap:15px;
+padding:20px;
+}
+
+.dashCard{
+flex:1;
+padding:20px;
+border-radius:22px;
+color:white;
+box-shadow:0 15px 30px rgba(0,0,0,0.08);
+}
+
+.dashCard span{
+font-size:14px;
+opacity:0.9;
+}
+
+.dashCard h2{
+font-size:28px;
+margin-top:8px;
+}
+
+.orange{background:#f59e0b;}
+.red{background:#ef4444;}
+.green{background:#10b981;}
+
+/* SEARCH */
+.searchBox{
+padding:0 20px 15px;
+}
+
+.searchBox input{
+width:100%;
+padding:14px;
+border-radius:18px;
+border:none;
+background:white;
+box-shadow:0 6px 15px rgba(0,0,0,0.05);
+font-size:15px;
+}
+
+/* LISTA */
+.lista{
+padding:10px 20px 120px;
+}
+
+.card{
+background:white;
+border-radius:20px;
+padding:18px;
+margin-bottom:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+position:relative;
+}
+
+.card::before{
+content:"";
+position:absolute;
+left:0;
+top:0;
+bottom:0;
+width:6px;
+border-radius:6px;
+}
+
+.card.incorso::before{background:#f59e0b;}
+.card.problema::before{background:#ef4444;}
+.card.chiuso::before{background:#10b981;}
+
+.card h3{
+margin-bottom:6px;
+}
+
+.link{
+display:block;
+font-size:14px;
+color:#2563eb;
+text-decoration:none;
+margin-top:4px;
+}
+
+/* AZIONI */
+.actions{
+display:flex;
+gap:10px;
+margin-top:12px;
+}
+
+.editBtn{
+flex:1;
+padding:10px;
+border:none;
+border-radius:12px;
+background:#e5e7eb;
+}
+
+.deleteBtn{
+flex:1;
+padding:10px;
+border:none;
+border-radius:12px;
+background:#ef4444;
+color:white;
+}
+
+/* FAB */
+.fab{
+position:fixed;
+bottom:30px;
+right:30px;
+width:65px;
+height:65px;
+border-radius:50%;
+border:none;
+font-size:28px;
+background:#1f2937;
+color:white;
+box-shadow:0 20px 35px rgba(0,0,0,0.2);
+}
+
+/* FORM */
+.formWrap{
+padding:20px;
+padding-bottom:120px;
+}
+
+.formWrap input,
+.formWrap select,
+.formWrap textarea{
+width:100%;
+padding:15px;
+margin:12px 0;
+border-radius:18px;
+border:none;
+background:#eef2f7;
+}
+
+textarea{
+resize:none;
+height:100px;
+}
+
+.saveBtn{
+position:fixed;
+bottom:20px;
+left:20px;
+right:20px;
+padding:18px;
+border:none;
+border-radius:20px;
+background:#1f2937;
+color:white;
+font-size:16px;
+}
+
+.subHeader{
+display:flex;
+align-items:center;
+gap:15px;
+padding:25px 20px 10px;
+}
+
+.subHeader button{
+background:none;
+border:none;
+font-size:20px;
+}
+
+.hidden{
+display:none;
+}
+.backupBar{
+display:flex;
+gap:10px;
+padding:0 20px 15px;
+}
+
+.backupBar button{
+flex:1;
+padding:10px;
+border:none;
+border-radius:12px;
+background:#e5e7eb;
+font-weight:500;
+}
